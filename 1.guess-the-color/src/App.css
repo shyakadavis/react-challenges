@@ -1,0 +1,67 @@
+.App {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.header {
+  color: white;
+}
+
+.right-answer {
+  color: #00ff00;
+  font-size: 1.2em;
+}
+
+.wrong-answer {
+  color: #ff0000;
+  font-size: 1.2em;
+}
+
+.result-box {
+  width: 200px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.guess-me {
+  width: 200px;
+  height: 200px;
+  transition: 700ms;
+}
+
+.guess-me:hover {
+  cursor: pointer;
+  border-radius: 10px;
+  transform: scale(200%);
+}
+
+.answer-buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  color: #ffffff;
+  font-size: 1em;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  bottom: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 5px;
+  padding: 10px 20px;
+  transition: background-color 400ms, border-color 400ms;
+  z-index: 10000;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
