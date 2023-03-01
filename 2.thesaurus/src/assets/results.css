@@ -1,0 +1,140 @@
+#results-wrapper {
+  width: 50vw;
+  margin-top: 40%;
+}
+
+/* 
+* The direct parent of the results container
+*/
+#results-container {
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: repeat(2, 50%);
+  margin: 3rem 0rem;
+}
+
+/* 
+* Each result
+*/
+#results-container > span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgb(255 255 255 / 10%);
+  padding: 1rem 0.75rem;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 400ms;
+}
+
+/* 
+* The label of each result
+*/
+#results-container > span > .label {
+  width: calc(100% - 2.5rem);
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  overflow: hidden;
+}
+
+/* 
+* The name/synonym of each result
+*/
+#results-container > span > .label > :is(.name, .url) {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: all 5s ease-out;
+}
+
+/* 
+display the full name/synonym when you hover over it
+
+#results-container > span > .label > :is(:hover) {
+  white-space: normal;
+  text-overflow: unset;
+  overflow: visible;
+  transition-delay: 5s; /* Add a delay of 0.3 seconds before transitioning
+} */
+
+/* 
+* When you hover over a result, it will be highlighted
+*/
+#results-container > span:is(:hover, :focus) {
+  background-color: rgb(255 255 255 / 16%);
+}
+
+/* 
+* The color of each odd-numbered result, starting from 3, 5, 7, etc.
+*/
+#results-container > span:nth-child(2n + 1) {
+  color: cyan;
+}
+
+/* 
+* The color of each even-numbered result, starting from 2, 4, 6, etc.
+* The background as well
+*/
+#results-container span:nth-child(2n) {
+  color: white;
+  background-color: rgb(0 255 255 / 10%);
+}
+
+/* 
+* When you hover over an even-numbered result, it will be highlighted differently than odd-numbered results
+*/
+#results-container > span:nth-child(2n):is(:hover, :focus) {
+  background-color: rgb(0 255 255 / 16%);
+}
+
+/* 
+* The color of the first result
+* The border radius of the first result (top-left)
+*/
+#results-container > span:first-child {
+  border-top-left-radius: 0.5rem;
+  color: rgb(28, 204, 91);
+}
+
+/* 
+* The color of the second result
+* The border radius of the second result (top-right)
+*/
+#results-container > span:nth-child(2) {
+  border-top-right-radius: 0.5rem;
+  color: rgb(28, 147, 228);
+}
+
+/* 
+* The color of the second-to-last result
+* The border radius of the second-to-last result (bottom-left)
+*/
+#results-container span:not(:last-child):nth-last-child(2):nth-of-type(odd) {
+  border-bottom-left-radius: 0.5rem;
+  color: rgb(28, 147, 228);
+}
+
+/*
+* The color of the last result
+* The border radius of the last result (bottom-right) 
+*/
+#results-container > span:last-child {
+  border-bottom-right-radius: 0.5rem;
+  color: rgb(28, 204, 91);
+}
+
+.no-results-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+.no-results {
+  font-size: 2rem;
+}
