@@ -1,0 +1,44 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+}
+
+.App {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.coordinate {
+  display: inline-block;
+  position: absolute;
+  border: 1px solid cyan;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: all 0.25s;
+}
+
+#undo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  margin: 2em;
+}
+
+#redo {
+  position: absolute;
+  /* top: 0; */
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  margin: 2em;
+}
